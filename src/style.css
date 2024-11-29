@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+  @apply min-h-screen bg-gray-100 p-8;
+}
+
+.container h1 {
+  @apply text-2xl font-bold mb-4;
+}
+
+.description {
+  @apply mb-4 text-gray-600;
+}
+
+.canvas-container {
+  @apply relative border border-gray-300 rounded-lg overflow-hidden inline-block;
+  touch-action: none; /* Prevent browser default touch actions */
+}
+
+.scale-indicator {
+  @apply absolute bottom-4 right-4 bg-white/80 px-3 py-1 rounded-md text-sm;
+}
+
+canvas {
+  @apply touch-none;
+  display: block;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
