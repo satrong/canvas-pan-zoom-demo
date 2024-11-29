@@ -1,25 +1,9 @@
-import { applyShadow, clearShadow } from './shadowUtils';
-
-export function drawScene(ctx: CanvasRenderingContext2D, isDragging: boolean = false): void {
+export function drawScene(ctx: CanvasRenderingContext2D): void {
   ctx.save();
   
-  if (isDragging) {
-    applyShadow(ctx, {
-      color: 'rgba(0, 0, 0, 0.3)',
-      blur: 10,
-      offsetX: 5,
-      offsetY: 5
-    });
-  } else {
-    clearShadow(ctx);
-  }
-
   // Draw main square
   ctx.fillStyle = '#4CAF50';
   ctx.fillRect(-50, -50, 100, 100);
-  
-  // Clear shadow for the circle stroke
-  clearShadow(ctx);
   
   // Draw circle
   ctx.beginPath();

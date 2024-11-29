@@ -1,7 +1,5 @@
-import { Transform } from '../types/transform';
-import { DragState } from '../types/dragState';
-import { drawScene } from '../utils/drawUtils';
-import { TouchState } from '../types/touchState';
+import { Transform, DragState, TouchState } from './types';
+import { drawScene } from './drawUtils';
 
 export class CanvasManager {
   private canvas: HTMLCanvasElement;
@@ -214,7 +212,7 @@ export class CanvasManager {
     );
 
     // Draw scene
-    drawScene(this.ctx, this.dragState.isDragging);
+    drawScene(this.ctx);
 
     // Update scale indicator
     this.scaleIndicator.textContent = `Scale: ${this.transform.scale.toFixed(2)}x`;
